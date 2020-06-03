@@ -1,0 +1,20 @@
+.search-results-container {
+    
+    margin: 20px 0;
+
+    a {
+        color: darkblue;
+
+        &hover {
+            text-decoration: underline;
+        }
+    }
+
+    .word-markup {
+        background-color: rgba(255, 255, 0, 0.753);
+    }
+}
+
+.search-results-count {
+    margin-bottom: 10px;
+}

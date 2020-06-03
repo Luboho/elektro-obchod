@@ -1,0 +1,42 @@
+
+.profile-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 120px;
+    padding: 100px 0 120px;
+
+    .active {
+      font-weight: bolder;
+    }
+
+    .my-profile {
+      
+    label {
+      display: block;
+    }
+  
+    .form-control {
+      margin-bottom: 30px;
+    }
+    
+    input {
+        margin-top: 30px;
+        padding: 16px 10px;
+        border-radius: 5px;
+        width: 80%;
+        font-size: 14px;
+    }
+    
+    .my-profile-button {
+        margin-top: 30px;
+        background: $text-color;
+        color: $white;
+        border-radius: 5px;
+        padding: 12px 50px;
+        
+        &:hover {
+          background: lighten($text-color, 10%);
+        }
+      }
+    }
+  }

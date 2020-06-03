@@ -1,0 +1,93 @@
+<?php
+
+return [
+    'data_rows'  => [
+        'author'           => 'Autor',
+        'avatar'           => 'Avatar',
+        'body'             => 'Obsah',
+        'category'         => 'Kategórie',
+        'created_at'       => 'Vytvorené',
+        'display_name'     => 'Názov pre zobrazenie',
+        'email'            => 'E-mail',
+        'excerpt'          => 'Perex',
+        'featured'         => 'Odporúčané',
+        'id'               => 'ID',
+        'meta_description' => 'Meta popis',
+        'meta_keywords'    => 'Meta kľúčové slová',
+        'name'             => 'Meno',
+        'order'            => 'Poradie',
+        'page_image'       => 'Obrázok stránky',
+        'parent'           => 'Rodič',
+        'password'         => 'Heslo',
+        'post_image'       => 'Obrázok príspevku',
+        'remember_token'   => 'Remember Token',
+        'role'             => 'Rola',
+        'seo_title'        => 'SEO nadpis',
+        'slug'             => 'URL slug',
+        'status'           => 'Stav',
+        'title'            => 'Titul',
+        'updated_at'       => 'Upravené',
+    ],
+    'data_types' => [
+        'category' => [
+            'singular' => 'Category',
+            'plural'   => 'Categories',
+        ],
+        'menu'     => [
+            'singular' => 'Menu',
+            'plural'   => 'Menus',
+        ],
+        'page'     => [
+            'singular' => 'Page',
+            'plural'   => 'Pages',
+        ],
+        'post'     => [
+            'singular' => 'Post',
+            'plural'   => 'Posts',
+        ],
+        'role'     => [
+            'singular' => 'Role',
+            'plural'   => 'Roles',
+        ],
+        'user'     => [
+            'singular' => 'User',
+            'plural'   => 'Users',
+        ],
+    ],
+    'menu_items' => [
+        'bread'        => 'BREAD',
+        'categories'   => 'Categories',
+        'compass'      => 'Compass',
+        'dashboard'    => 'Dashboard',
+        'database'     => 'Database',
+        'media'        => 'Media',
+        'menu_builder' => 'Menu Builder',
+        'pages'        => 'Pages',
+        'posts'        => 'Posts',
+        'roles'        => 'Roles',
+        'settings'     => 'Settings',
+        'tools'        => 'Tools',
+        'users'        => 'Users',
+    ],
+    'roles'      => [
+        'admin' => 'Administrátor',
+        'user'  => 'Normálny užívateľ',
+    ],
+    'settings'   => [
+        'admin' => [
+            'background_image'           => 'Admin Obrázok Pozadie',
+            'description'                => 'Admin Popis',
+            'description_value'          => 'Vítaj v admine',
+            'google_analytics_client_id' => 'Google Analytics Client ID (používaný pre admin dashboard)',
+            'icon_image'                 => 'Ikona obrázku Admin',
+            'loader'                     => 'Admin Loader',
+            'title'                      => 'Admin nadpis',
+        ],
+        'site'  => [
+            'description'                  => 'Popis stránky',
+            'google_analytics_tracking_id' => 'Google Analytics Tracking ID',
+            'logo'                         => 'Logo stránky',
+            'title'                        => 'Nadpis stránky',
+        ],
+    ],
+];

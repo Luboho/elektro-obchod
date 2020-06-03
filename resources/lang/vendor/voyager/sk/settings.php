@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'usage_help'           => 'Môžete získať hodnotu každého nastavenia kdekoľvek na stránke zavolaním',
+    'save'                 => 'Uložiť nastavenia',
+    'new'                  => 'Nové nastavenia',
+    'help_name'            => 'Názov nastavenia ex: "Názov stránky"',
+    'help_key'             => 'Kľúč nastavenia ex: "názov_stránky"',
+    'help_option'          => '(nepovinné, vzťahuje sa len na veci ako dropdown menu alebo tlačítka)',
+    'add_new'              => 'Pridať nové nastavenia',
+    'delete_question'      => 'Ste si istý, že chcete zmazať :setting ?',
+    'delete_confirm'       => 'Áno, zmazať tieto nastavenia',
+    'successfully_created' => 'Nastavenie úspešne vytvořené',
+    'successfully_saved'   => 'Nastavenie úspešne uložené',
+    'successfully_deleted' => 'Nastavenie úspešne zmazané',
+    'already_at_top'       => 'Toto už je na začiatku zoznamu',
+    'already_at_bottom'    => 'Toto už je na konci zoznamu',
+    'key_already_exists'   => 'Kľúč s názvom :key už existuje',
+    'moved_order_up'       => 'Nastavenie :name posunuté v poradí vyššie',
+    'moved_order_down'     => 'Nastavenie :name posunuté v poradí nižšie',
+    'successfully_removed' => 'Úspešne odstránená hodnota :name',
+    'group_general'        => 'Hlavné',
+    'group_admin'          => 'Admin',
+    'group_site'           => 'Stránka',
+    'group'                => 'Skupina',
+    'help_group'           => 'Skupina tohto nastavenia je priradená',
+];
