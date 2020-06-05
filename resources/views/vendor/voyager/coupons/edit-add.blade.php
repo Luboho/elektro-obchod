@@ -36,7 +36,7 @@
                         @endif
 
                         <!-- CSRF TOKEN -->
-                        @csrf
+                        {{ csrf_field() }}
 
                         <div class="panel-body">
 
@@ -55,8 +55,17 @@
                                 $dataTypeRows = $dataType->{($edit ? 'editRows' : 'addRows' )};
                             @endphp
 
+                                
+                                {{-- <div class="form-group col-md-12" style="border:none;">
+                                <label class="">Typ</label>
+                                <select value="" name="type" id="" class="form-control" required> 
+                                    <option value="fixed">Hodnota</option>
+                                    <option value="percent">Percento</option>
+                                </select>
+                                </div> --}}
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
+                                
                                 @php
                                     $display_options = $row->details->display ?? NULL;
                                     if ($dataTypeContent->{$row->field.'_'.($edit ? 'edit' : 'add')}) {
@@ -71,6 +80,7 @@
                                     {{ $row->slugify }}
                                     <label class="control-label" for="name">{{ $row->getTranslatedAttribute('display_name') }}</label>
                                     @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                    
                                     @if (isset($row->details->view))
                                         @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => ($edit ? 'edit' : 'add'), 'view' => ($edit ? 'edit' : 'add'), 'options' => $row->details])
                                     @elseif ($row->type == 'relationship')
@@ -90,25 +100,7 @@
                                 </div>
                             @endforeach
 
-                            <div class="form-group">
-                                <label>Kategorie</label>
-
-                                <ul style="list-style-type:none; padding-left: 0;">
-                                    @foreach($allCategories as $category)
-                                        <li><label>
-                                            <input value="{{ $category->id }}"
-                                                   type="checkbox" 
-                                                   name="category[]" 
-                                                   {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>
-                                            {{ $category->name }}</label>
-                                        </li>
-                                    @endforeach
-                                </ul>
-
-                            </div> <!-- end form-group -->
-
                         </div><!-- panel-body -->
-
 
                         <div class="panel-footer">
                             @section('submit-buttons')
@@ -124,7 +116,7 @@
                         <input name="image" id="upload_file" type="file"
                                  onchange="$('#my_form').submit();this.value='';">
                         <input type="hidden" name="type_slug" id="type_slug" value="{{ $dataType->slug }}">
-                        @csrf
+                        {{ csrf_field() }}
                     </form>
 
                 </div>
@@ -227,10 +219,6 @@
                 $('#confirm_delete_modal').modal('hide');
             });
             $('[data-toggle="tooltip"]').tooltip();
-
-            // Making Product Price to Float.
-            var price = $('input[name="price"').val();
-            $('input[name="price"').val(price / 100);
         });
     </script>
 @stop

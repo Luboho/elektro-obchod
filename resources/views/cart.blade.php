@@ -116,7 +116,7 @@
                             <hr>
                             Nový medzisúčet <br>
                         @endif
-                        Daň(20%) <br>
+                        DPH(20%) <br>
                         <span class="cart-totals-total">Celkom&nbsp; </span>
                     </div>
                     <div class="cart-totals-subtotal">

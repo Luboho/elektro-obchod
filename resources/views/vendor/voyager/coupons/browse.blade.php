@@ -3,7 +3,6 @@
 @section('page_title', __('voyager::generic.viewing').' '.$dataType->getTranslatedAttribute('display_name_plural'))
 
 @section('page_header')
-
     <div class="container-fluid">
         <h1 class="page-title">
             <i class="{{ $dataType->icon }}"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
@@ -36,22 +35,6 @@
         @include('voyager::multilingual.language-selector')
     </div>
 @stop
-
-@section('css')
-    <style>
-        .order-error {
-            color: white;
-            background-color: #ff0303c4 !important;
-            border-color: #d6e9c6;
-        }
-        .order-shipped {
-            color: #3c763d;
-            background-color: #dff0d8 !important;
-            border-color: #d6e9c6;
-        }
-    </style>
-@stop
-
 
 @section('content')
     <div class="page-content browse container-fluid">
@@ -101,21 +84,20 @@
                                             </th>
                                         @endif
                                         @foreach($dataType->browseRows as $row)
-
                                         <th>
                                             @if ($isServerSide)
-                                            <a href="{{ $row->sortByUrl($orderBy, $sortOrder) }}">
-                                                @endif
-                                                {{ $row->getTranslatedAttribute('display_name') }}
-                                                @if ($isServerSide)
+                                                <a href="{{ $row->sortByUrl($orderBy, $sortOrder) }}">
+                                            @endif
+                                            {{ $row->getTranslatedAttribute('display_name') }}
+                                            @if ($isServerSide)
                                                 @if ($row->isCurrentSortField($orderBy))
-                                                @if ($sortOrder == 'asc')
-                                                <i class="voyager-angle-up pull-right"></i>
-                                                @else
-                                                <i class="voyager-angle-down pull-right"></i>
+                                                    @if ($sortOrder == 'asc')
+                                                        <i class="voyager-angle-up pull-right"></i>
+                                                    @else
+                                                        <i class="voyager-angle-down pull-right"></i>
+                                                    @endif
                                                 @endif
-                                                @endif
-                                            </a>
+                                                </a>
                                             @endif
                                         </th>
                                         @endforeach
@@ -124,14 +106,14 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent as $data)
-                                    <tr class="{{ $data->error ? 'order-error' : '' }} {{ $data->shipped ? 'order-shipped' : '' }}">
+                                    <tr>
                                         @if($showCheckboxColumn)
-                                        <td>
-                                            <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
-                                        </td>
+                                            <td>
+                                                <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
+                                            </td>
                                         @endif
                                         @foreach($dataType->browseRows as $row)
-                                        @php
+                                            @php
                                             if ($data->{$row->field.'_browse'}) {
                                                 $data->{$row->field} = $data->{$row->field.'_browse'};
                                             }
@@ -264,9 +246,10 @@
                                                     @endif
                                                 @else
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
-                                                   
-                                                    @if ($row->display_name == 'Faktúra celkom' || $row->display_name == 'Medzisúčet' || $row->display_name == 'DPH' || ($row->display_name == 'Zľava na obj.' && $data->{$row->field} > 0))
+                                                    @if($row->display_name == 'Hodnota' && $data->{$row->field} > 0)
                                                         <span>€{{ $data->{$row->field} / 100 }}</span>
+                                                    @elseif($row->display_name == 'Percento' && $data->{$row->field} > 0)
+                                                        <span>{{ $data->{$row->field} }}%</span>
                                                     @else
                                                         <span>{{ $data->{$row->field} }}</span>
                                                     @endif

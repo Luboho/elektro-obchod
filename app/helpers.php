@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class Helper {
@@ -8,6 +9,11 @@ class Helper {
     public static function limitText($description)
     {
         return Str::limit($description, 80);
+    }
+
+    public static function findString($array, $needle)
+    {
+        return Str::contains($array, $needle);
     }
 
     public static function cartItemsCounterEnding($count)

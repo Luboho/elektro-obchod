@@ -39,7 +39,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'name',
+                'display_name' => 'Meno',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -71,7 +71,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Details',
+                'display_name' => 'Detaily',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -87,7 +87,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => 'price',
+                'display_name' => 'Cena',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -103,7 +103,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'rich_text_box',
-                'display_name' => 'Description',
+                'display_name' => 'Popis',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -119,7 +119,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'checkbox',
-                'display_name' => 'Featured',
+                'display_name' => 'Predvolené',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -135,7 +135,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'image',
-                'display_name' => 'Image',
+                'display_name' => 'Obrázok',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -151,7 +151,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'multiple_images',
-                'display_name' => 'Images',
+                'display_name' => 'Obrázky',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -167,7 +167,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Created At',
+                'display_name' => 'Vytvorené',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -183,7 +183,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Updated At',
+                'display_name' => 'Aktualizované',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -221,7 +221,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'hidden',
-                'display_name' => 'User Id',
+                'display_name' => 'Užívateľské Id',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -236,7 +236,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing email',
+                'display_name' => 'Email',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -251,7 +251,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing name',
+                'display_name' => 'Meno Priezvisko',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -266,7 +266,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing address',
+                'display_name' => 'Adresa',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -281,7 +281,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing city',
+                'display_name' => 'Mesto',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -296,7 +296,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing province',
+                'display_name' => 'Okres',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -311,7 +311,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing postalcode',
+                'display_name' => 'PSČ',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -326,7 +326,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing phone',
+                'display_name' => 'Tel.číslo',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -341,7 +341,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing Name on card',
+                'display_name' => 'Meno na plat. karte',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -356,7 +356,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => 'Billing discount',
+                'display_name' => 'Zľava na obj.',
                 'required'     => '',
                 'browse'       => 1,
                 'read'         => 1,
@@ -371,7 +371,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Billing discount code',
+                'display_name' => 'Kód zľav. kupónu',
                 'required'     => '',
                 'browse'       => 1,
                 'read'         => 1,
@@ -386,7 +386,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => 'Billing subtotal',
+                'display_name' => 'Medzisúčet',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -401,7 +401,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => 'Billing tax',
+                'display_name' => 'DPH',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -416,7 +416,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => 'Billing total',
+                'display_name' => 'Faktúra celkom',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -431,7 +431,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Payment Gateway',
+                'display_name' => 'Platobná brána',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -446,14 +446,14 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'checkbox',
-                'display_name' => 'Shipped',
+                'display_name' => 'Odoslané',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => ['on' => 'Shipped', 'off' => 'Not Shipped', 'checked' => true],
+                'details'      => ['on' => 'Vybavené', 'off' => 'Nevybavené', 'checked' => true],
                 'order'        => 17,
             ])->save();
         }
@@ -461,7 +461,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Error',
+                'display_name' => 'Chyba',
                 'required'     => '',
                 'browse'       => 1,
                 'read'         => 1,
@@ -476,7 +476,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Created At',
+                'display_name' => 'Vytvorené',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -492,7 +492,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Updated At',
+                'display_name' => 'Aktualizované',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -534,7 +534,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'code',
+                'display_name' => 'Kód',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -550,7 +550,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'select_dropdown',
-                'display_name' => 'Type',
+                'display_name' => 'Typ',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -566,7 +566,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => 'Value',
+                'display_name' => 'Hodnota',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -582,7 +582,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => 'Percent Off',
+                'display_name' => 'Percento',
                 'required'     => 0,
                 'browse'       => 1,
                 'read'         => 1,
@@ -598,7 +598,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Created At',
+                'display_name' => 'Vytvorené',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 1,
@@ -614,7 +614,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Updated At',
+                'display_name' => 'Aktualizované',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 1,
@@ -654,7 +654,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'Name',
+                'display_name' => 'Názov',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -686,7 +686,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Created At',
+                'display_name' => 'Vytvorené',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -702,7 +702,7 @@ class DataRowsTableSeederCustom extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => 'Updated At',
+                'display_name' => 'Aktualizované',
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -803,7 +803,6 @@ class DataRowsTableSeederCustom extends Seeder
     //         ])->save();
     //     }
     }
-
     /**
      * [dataRow description].
      *

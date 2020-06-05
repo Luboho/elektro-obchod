@@ -14,8 +14,8 @@ class DataTypesTableSeederCustom extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'products',
-                'display_name_singular' => 'Product',
-                'display_name_plural'   => 'Products',
+                'display_name_singular' => 'Produkt',
+                'display_name_plural'   => 'Produkty',
                 'icon'                  => 'voyager-bag',
                 'model_name'            => 'App\Product',
                 'policy_name'           => null,
@@ -30,8 +30,8 @@ class DataTypesTableSeederCustom extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'orders',
-                'display_name_singular' => 'Order',
-                'display_name_plural'   => 'Orders',
+                'display_name_singular' => 'Objednávk',
+                'display_name_plural'   => 'Objednávky',
                 'icon'                  => 'voyager-receipt',
                 'model_name'            => 'App\Order',
                 'policy_name'           => null,
@@ -46,8 +46,8 @@ class DataTypesTableSeederCustom extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'coupons',
-                'display_name_singular' => 'Coupon',
-                'display_name_plural'   => 'Coupons',
+                'display_name_singular' => 'Kupón',
+                'display_name_plural'   => 'Kupóny',
                 'icon'                  => 'voyager-dollar',
                 'model_name'            => 'App\Coupon',
                 'controller'            => '',
@@ -60,8 +60,8 @@ class DataTypesTableSeederCustom extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'name'                  => 'category',
-                'display_name_singular' => 'Category',
-                'display_name_plural'   => 'Categories',
+                'display_name_singular' => 'Kategoria',
+                'display_name_plural'   => 'Kategorie',
                 'icon'                  => 'voyager-tag',
                 'model_name'            => 'App\Category',
                 'controller'            => '',

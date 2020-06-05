@@ -20,7 +20,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Dashboard',
+                'title'   => 'Kontrolný panel',
                 'url'     => '',
                 'route'   => 'voyager.dashboard',
             ]);
@@ -36,7 +36,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Media',
+                'title'   => 'Média',
                 'url'     => '',
                 'route'   => 'voyager.media.index',
             ]);
@@ -52,7 +52,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Posts',
+                'title'   => 'Príspevky',
                 'url'     => '',
                 'route'   => 'voyager.posts.index',
             ]);
@@ -68,7 +68,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Users',
+                'title'   => 'Užívatelia',
                 'url'     => '',
                 'route'   => 'voyager.users.index',
             ]);
@@ -84,7 +84,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Categories',
+                'title'   => 'Kategorie(vzor)',
                 'url'     => '',
                 'route'   => 'voyager.categories.index',
             ]);
@@ -100,7 +100,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Pages',
+                'title'   => 'Stránky',
                 'url'     => '',
                 'route'   => 'voyager.pages.index',
             ]);
@@ -116,7 +116,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Roles',
+                'title'   => 'Povolenia',
                 'url'     => '',
                 'route'   => 'voyager.roles.index',
             ]);
@@ -132,7 +132,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $toolsMenuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Tools',
+                'title'   => 'Nástroje',
                 'url'     => '',
             ]);
             if (!$toolsMenuItem->exists) {
@@ -147,7 +147,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Menu Builder',
+                'title'   => 'Menu konštruktér',
                 'url'     => '',
                 'route'   => 'voyager.menus.index',
             ]);
@@ -163,7 +163,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Database',
+                'title'   => 'Databáza',
                 'url'     => '',
                 'route'   => 'voyager.database.index',
             ]);
@@ -179,7 +179,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Compass',
+                'title'   => 'Kompas',
                 'url'     => '',
                 'route'   => 'voyager.compass.index',
             ]);
@@ -195,7 +195,7 @@ class MenuItemsTableSeeder extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Settings',
+                'title'   => 'Nastavenia',
                 'url'     => '',
                 'route'   => 'voyager.settings.index',
             ]);

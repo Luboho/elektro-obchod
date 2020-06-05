@@ -2,7 +2,7 @@
 
 return [
     'add_bread'              => 'Pridať BREAD pre túto tabuľku',
-    'bread_crud_actions'     => 'BREAD/CRUD Akcie',
+    'bread_crud_actions'     => 'BREAD/CRUD Možnosti',
     'bread_info'             => 'BREAD info',
     'controller_name_hint'   => 'ex. PageController, ak ostane vynechané použije sa BREAD kontrolór ',
     'create_bread_for_table' => 'Vytvoriť BREAD pre :table tabuľku',
@@ -20,7 +20,7 @@ return [
     'success_created_bread'  => 'Úspešne vytvorený nový BREAD',
     'success_remove_bread'   => 'Úspešne odstránený BREAD z :datatype',
     'success_update_bread'   => 'Úspešne aktualizovaný :datatype BREAD',
-    'controller_name'        => 'Názov kontrolóra',
+    'controller_name'        => 'Názov kontroléra',
     'create_migration'       => 'Vytvoriť migráciu pre túto tabuľku?',
     'description'            => 'Popis',
     'display_name'           => 'Zobraziť názov',

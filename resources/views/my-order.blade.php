@@ -87,7 +87,7 @@
                                     <td>{{ presentPrice($order->billing_subtotal) }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Daň</td>
+                                    <td>DPH</td>
                                     <td>{{ presentPrice($order->billing_tax) }}</td>
                                 </tr>
                                 <tr>

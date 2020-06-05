@@ -134,7 +134,7 @@
                             Nový medzisúčet <br>
                         @endif
 
-                        Daň ({{config('cart.tax')}}%)<br>
+                        DPH ({{config('cart.tax')}}%)<br>
                         <span class="checkout-totals-total">Celkom</span>
 
                     </div>
