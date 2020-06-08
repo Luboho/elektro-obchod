@@ -32,10 +32,20 @@
         @endif
     </div>
 
-    <div class="search-results-container container">
-       <h1>Výsledky hľadania</h1>
-       <p class="search-results-count">{{ $products->total() }} výsledkov pre {{ request()->input('query') }}</p>
-       
+    <div class="search-results-container m-auto container">
+       <h1 class="mt-3">Výsledky hľadania</h1>
+       <div class="d-flex justify-content-between pb-3">
+            <p class="search-results-count">{{ $products->total() }} výsledkov pre <strong>{{ request()->input('query') }}</strong></p>
+        
+            <div>
+                @if($products->count() > 0)
+                    <strong>Cena: </strong>
+                    <a href="{{ route('search', ['query' => request()->input('query'), 'sort'=> request()->sort, 'sort' => 'low_high']) }}">Od najlacnejších</a> |
+                    <a href="{{ route('search', ['query' => request()->input('query'), 'sort'=> request()->sort, 'sort' => 'high_low']) }}">Od najdrahších</a>
+                @endif
+            </div>
+       </div>
+
        @if($products->total() > 0)
             <table class="table table-bordered table-striped">
                 <thead>
@@ -61,7 +71,7 @@
 
             </table>
             <div class="spacer"></div>
-            {{ $products->appends(request()->input())->links() }}
+            <div class="text-center">{{ $products->appends(request()->input())->links() }}</div>
         @endif
     </div> <!-- end search container-->
 

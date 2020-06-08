@@ -79,13 +79,20 @@ class ShopController extends Controller
         //                     ->orWhere('description', 'like', "%$query%")
         //                     ->paginate(10);   // "%$query%" is dynamic SQL helper searching for words in $tables where contains $query. Without %% it will searching strictly what is in $query
 
-       $products = Product::search($query)->paginate(10); // Search modul by nicolaslopezj/searchable .// If Syntax error or access violation: 1055 Error appear change true to false in config.database
+        if (request()->sort == 'low_high') {
+            $products = Product::search($query)->orderBy('price')->paginate(10); // Search modul by nicolaslopezj/searchable .// If Syntax error or access violation: 1055 Error appear change true to false in config.database
+        } elseif (request()->sort == 'high_low') {
+            $products = Product::search($query)->orderBy('price', 'desc')->paginate(10); // Search modul by nicolaslopezj/searchable .// If Syntax error or access violation: 1055 Error appear change true to false in config.database
+        } else {
+            $products = Product::search($query)->paginate(10); // Search modul by nicolaslopezj/searchable .// If Syntax error or access violation: 1055 Error appear change true to false in config.database
+        }
 
-        return view('search-results')->with('products', $products);
+        return view('search-results', compact('products'));
     }
 
     public function searchAlgolia(Request $request)
     {
         return view('search-results-algolia');
     }
+
 }

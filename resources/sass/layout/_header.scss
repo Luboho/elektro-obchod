@@ -1,5 +1,5 @@
 header.with-background {
-    background: url('/img/triangles.svg');
+    background: url('/img/header_background.svg');
     background-size: cover;
     color: $white;
 
@@ -22,6 +22,7 @@ header.with-background {
 
         a {
           color: $white;
+    
           &:hover {
             color: darken($white, 10%);
           }
@@ -94,7 +95,6 @@ header.with-background {
             transition-duration: 0.3s;
             color: darken($white, 60%);
             text-shadow: 1px -1px 1px lighten($color: white, $amount: 30%), -1px 1px 1px lighten($color: white, $amount: 30%);
-            font-weight: bolder;
           }
         }
 

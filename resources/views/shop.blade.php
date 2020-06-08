@@ -48,7 +48,6 @@
                     <strong>Cena: </strong>
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}">Od najlacnejších</a> |
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}">Od najdrahších</a>
-
                 </div>
             </div>
 
@@ -66,7 +65,7 @@
             </div> <!-- end products -->
 
             <div class="spacer"></div>
-            {{ $products->appends(request()->input())->links() }}
+            <div class="text-center">{{ $products->appends(request()->input())->links() }}</div>
         </div>
     </div>
 
