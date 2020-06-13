@@ -88,6 +88,22 @@ class MenuItemsTableSeederCustom extends Seeder
                 ])->save();
             }
 
+            $menuItem = MenuItem::firstOrNew([
+                'menu_id' => $menu->id,
+                'title'   => 'Firma',
+                'url'     => '/admin/companies',
+                'route'   => null,
+            ]);
+            if (!$menuItem->exists) {
+                $menuItem->fill([
+                    'target'     => '_self',
+                    'icon_class' => 'voyager-company',
+                    'color'      => null,
+                    'parent_id'  => null,
+                    'order'      => 5,
+                ])->save();
+            }
+
             // $menuItem = MenuItem::firstOrNew([
             //     'menu_id' => $menu->id,
             //     'title'   => 'Category Products',
@@ -100,7 +116,7 @@ class MenuItemsTableSeederCustom extends Seeder
             //         'icon_class' => 'voyager-categories',
             //         'color'      => null,
             //         'parent_id'  => null,
-            //         'order'      => 5,
+            //         'order'      => 14,
             //     ])->save();
             // }
 

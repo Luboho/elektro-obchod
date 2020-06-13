@@ -1,10 +1,17 @@
 <?php
 
+use App\Company;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class Helper {
+
+    public static function companyData()
+    {
+        $companyData = Company::all();
+        return $companyData;
+    }
 
     public static function limitText($description)
     {

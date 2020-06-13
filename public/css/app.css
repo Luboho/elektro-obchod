@@ -11856,6 +11856,33 @@ footer {
   padding: 40px 0;
 }
 
+footer .container {
+  display: grid;
+  grid-template-columns: 25% 25% 45%;
+  grid-template-areas: "footer-section1 footer-section2 footer-section3" "footer-section4 footer-section4 footer-section4";
+}
+
+footer .container #footer-section1 {
+  grid-area: footer-section1;
+  justify-self: center;
+}
+
+footer .container #footer-section2 {
+  grid-area: footer-section2;
+  justify-self: center;
+}
+
+footer .container #footer-section3 {
+  grid-area: footer-section3;
+  justify-self: end;
+}
+
+footer .container #footer-section4 {
+  text-align: center;
+  padding-top: 2em;
+  grid-area: footer-section4;
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;

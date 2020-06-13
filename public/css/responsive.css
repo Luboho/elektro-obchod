@@ -148,7 +148,23 @@
 
 /* Small Devices, Tablets */
 
+@media only screen and (max-width: 768px) {
+  footer .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-template-areas: "footer-section1" "footer-section2" "footer-section3" "footer-section4";
+  }
+}
+
 /* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+  footer .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-template-areas: "footer-section1" "footer-section2" "footer-section3" "footer-section4";
+  }
+}
 
 /* Custom, iPhone Retina */
 

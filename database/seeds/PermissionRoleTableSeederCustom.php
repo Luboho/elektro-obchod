@@ -37,7 +37,7 @@ class PermissionRoleTableSeederCustom extends Seeder
                 'delete_categories',
                 'delete_settings',
                 'delete_products',
-                'delete_products',
+                'delete_companies',
                 'delete_coupons',
                 'delete_categories',
                 'delete_category-product',

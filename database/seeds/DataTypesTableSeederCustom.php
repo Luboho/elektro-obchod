@@ -70,6 +70,20 @@ class DataTypesTableSeederCustom extends Seeder
             ])->save();
         }
 
+        $dataType = $this->dataType('slug', 'companies');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'companies',
+                'display_name_singular' => 'Company',
+                'display_name_plural'   => 'Companies',
+                'icon'                  => 'voyager-company',
+                'model_name'            => 'App\Company',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
         // $dataType = $this->dataType('name', 'category-product');
         // if (!$dataType->exists) {
         //     $dataType->fill([
