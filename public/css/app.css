@@ -12048,10 +12048,75 @@ footer .container #footer-section4 {
   grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
   margin: 60px auto;
+  /* CUSTOM RADIO & CHECKBOXES*/
+  /* RADIO & CHECKBOX STYLES */
+  /* DEFAULT <i> STYLE */
+  /*end radio buttons customization */
 }
 
 .cart-section h2 {
   margin-bottom: 30px;
+}
+
+.cart-section .rad {
+  cursor: pointer;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.cart-section .rad > input {
+  /* HIDE ORG RADIO & CHECKBOX */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cart-section .rad > i {
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+  transition: 0.2s;
+  box-shadow: inset 0 0 0 8px #fff;
+  border: 1px solid gray;
+  background: gray;
+}
+
+.cart-section .rad:hover > i {
+  /* HOVER <i> STYLE */
+  box-shadow: inset 0 0 0 3px #fff;
+  background: gray;
+}
+
+.cart-section .rad > input:checked + i {
+  /* (RADIO CHECKED) <i> STYLE */
+  box-shadow: inset 0 0 0 3px #fff;
+  background: #3EBFA4;
+}
+
+.cart-section .form-block {
+  padding: 0.8rem;
+  margin-bottom: 0.2rem;
+  border: 0.5px solid rgba(180, 172, 172, 0.692);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-section .form-block label {
+  font-weight: 700;
+}
+
+.cart-section .form-block ul li {
+  font-size: smaller;
+  margin-left: 2em;
+  list-style-type: disc;
 }
 
 .cart-section .cart-table-row {

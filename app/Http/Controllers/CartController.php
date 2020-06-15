@@ -17,7 +17,6 @@ class CartController extends Controller
     public function index(Request $request)
     {   
         $mightAlsoLike = Product::mightAlsoLike()->get();   //mightAlsoLike() scoped fnc. in Product model
-
         return view('cart')->with([
             'mightAlsoLike' => $mightAlsoLike,
             'discount' => getNumbers()->get('discount'),
@@ -94,24 +93,25 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $validator = Validator::make($request->all(), [
-            'quantity' => 'required|numeric|between:1,5'
-        ]);
+        
+        return $request->all();
+        // $validator = Validator::make($request->all(), [
+        //     'quantity' => 'required|numeric|between:1,5'
+        // ]);
 
-        if($validator->fails()) {
-            session()->flash('denied', collect(['Množstvo musí byť od 1 do 5.'])->first());
-            return response()->json(['success' => false], 400);     // Https  RESPONSE Bad request 400;
-        }
+        // if($validator->fails()) {
+        //     session()->flash('denied', collect(['Množstvo musí byť od 1 do 5.'])->first());
+        //     return response()->json(['success' => false], 400);     // Https  RESPONSE Bad request 400;
+        // }
 
-        if ($request->quantity > $request->productQuantity) {
-            session()->flash('errors', collect(['Nedostatok položiek na sklade.'])->first());
-            return response()->json(['success' => false], 400);
-        }
+        // if ($request->quantity > $request->productQuantity) {
+        //     session()->flash('errors', collect(['Nedostatok položiek na sklade.'])->first());
+        //     return response()->json(['success' => false], 400);
+        // }
+        // Cart::update($id, $request->quantity);
 
-         Cart::update($id, $request->quantity);
-
-         session()->flash('success_message', 'Množstvo bolo aktualizované!');
-         return response()->json(['success' => true]);
+        //  session()->flash('success_message', 'Množstvo bolo aktualizované!');
+        //  return response()->json(['success' => true]);
     }
 
     /**
