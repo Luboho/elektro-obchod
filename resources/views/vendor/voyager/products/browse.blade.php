@@ -246,7 +246,7 @@
                                                     @endif
                                                 @else
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    @if ($row->display_name == 'price')     {{-- Making Product price float on Voyager Browse view.--}}
+                                                    @if ($row->display_name == 'Cena')     {{-- Making Product price float on Voyager Browse view.--}}
                                                         <span>€{{ $data->{$row->field} / 100 }}</span>
                                                     @else
                                                         <span>{{ $data->{$row->field} }}</span>

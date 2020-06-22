@@ -63,7 +63,7 @@
                             <td><a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}"></a></td>
                             <td><a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</td>
                                 <td>{{ $product->details }}</td>
-                            <td>{{ \Helper::limitText($product->description) }} </td>
+                            <td>{!! \Helper::limitText($product->description) !!} </td>
                             <td>{{ $product->presentPrice() }}</td>
                         </tr>
                         @endforeach

@@ -326,6 +326,9 @@ class CouponsController extends VoyagerBaseController
             $data = $model->findOrFail($id);
         }
 
+        $requestNew = $request; // Making float Coupons price.
+        $requestNew['value'] = $request->value * 100;
+
         // Check permission
         $this->authorize('edit', $data);
 
@@ -409,6 +412,9 @@ class CouponsController extends VoyagerBaseController
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        $requestNew = $request; // Making float Coupons value.
+        $requestNew['value'] = $request->value * 100;
 
         // Check permission
         $this->authorize('add', app($dataType->model_name));

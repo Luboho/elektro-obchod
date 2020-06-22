@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Carrier;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Validator;
@@ -16,8 +17,11 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {   
+        $carriers = Carrier::all(); 
+
         $mightAlsoLike = Product::mightAlsoLike()->get();   //mightAlsoLike() scoped fnc. in Product model
         return view('cart')->with([
+            'carriers' => $carriers,
             'mightAlsoLike' => $mightAlsoLike,
             'discount' => getNumbers()->get('discount'),
             'newSubtotal' => getNumbers()->get('newSubtotal'),
@@ -44,7 +48,6 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-
         // // Avoid items duplication in cart. 
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;          // Cmp. items between cart and request. 
@@ -53,13 +56,13 @@ class CartController extends Controller
         if ($duplicates->isNotEmpty()) {
             session()->flash('success', 'Položka už vo vašom košíku je.');
             return redirect('cart');
-        }
+        } 
 
-        Cart::add($request->id, $request->name, 1, $request->price) // Adding item to the cart.
-            ->associate('App\Product');                             
+            Cart::add($request->id, $request->name, 1, $request->price) // Adding item to the cart.
+                ->associate('App\Product');                             
 
-        session()->flash('success', 'Položka bola pridaná do košíka.');
-        return redirect('cart');
+            session()->flash('success', 'Položka bola pridaná do košíka.');
+            return redirect('cart');
     }
 
     /**
@@ -93,25 +96,24 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        
-        return $request->all();
-        // $validator = Validator::make($request->all(), [
-        //     'quantity' => 'required|numeric|between:1,5'
-        // ]);
 
-        // if($validator->fails()) {
-        //     session()->flash('denied', collect(['Množstvo musí byť od 1 do 5.'])->first());
-        //     return response()->json(['success' => false], 400);     // Https  RESPONSE Bad request 400;
-        // }
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'required|numeric|between:1,5'
+        ]);
 
-        // if ($request->quantity > $request->productQuantity) {
-        //     session()->flash('errors', collect(['Nedostatok položiek na sklade.'])->first());
-        //     return response()->json(['success' => false], 400);
-        // }
-        // Cart::update($id, $request->quantity);
+        if($validator->fails()) {
+            session()->flash('denied', collect(['Množstvo musí byť od 1 do 5.'])->first());
+            return response()->json(['success' => false], 400);     // Https  RESPONSE Bad request 400;
+        }
 
-        //  session()->flash('success_message', 'Množstvo bolo aktualizované!');
-        //  return response()->json(['success' => true]);
+        if ($request->quantity > $request->productQuantity) {
+            session()->flash('errors', collect(['Nedostatok položiek na sklade.'])->first());
+            return response()->json(['success' => false], 400);
+        }
+        Cart::update($id, $request->quantity);
+
+         session()->flash('success_message', 'Množstvo bolo aktualizované!');
+         return response()->json(['success' => true]);
     }
 
     /**
@@ -155,4 +157,5 @@ class CartController extends Controller
         session()->flash('success', 'Položka je rezervovaná.');
         return redirect('cart');
     }
+
 }

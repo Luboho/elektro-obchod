@@ -199,14 +199,9 @@
             });
             $('[data-toggle="tooltip"]').tooltip();
         });
-        // Making Order Billing values Float.
-        var billing_discount = $('input[name="billing_discount"').val();
-            $('input[name="billing_discount"').val(billing_discount / 100);
-        var billing_subtotal = $('input[name="billing_subtotal"').val();
-            $('input[name="billing_subtotal"').val(billing_subtotal / 100);
-        var billing_tax = $('input[name="billing_tax"').val();
-            $('input[name="billing_tax"').val(billing_tax / 100);    
-        var billing_total = $('input[name="billing_total"').val();
-            $('input[name="billing_total"').val(billing_total / 100.);
+        // Making Carrier price to Float.
+        var price = $('input[name="price"').val();
+            $('input[name="price"').val(price / 100);
+        
     </script>
 @stop

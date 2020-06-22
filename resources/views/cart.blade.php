@@ -78,7 +78,7 @@
 
                                     </select>
                                 </div>
-                                <div class="ml-1">{{ $item->model->presentPrice() }}</div>
+        {{-- <div class="ml-1">{{ $item->model->presentPrice() }}</div> --}}
                             </div>
                         </div> <!-- end cart-table-row -->
                             
@@ -101,9 +101,11 @@
                         <div class="cart-totals-left">
                           Doprava ZDARMA pri nákupe nad 45€.
                         </div>
-
                         <div class="cart-totals-right">
                             <div>
+                                @if( session()->has('carrier') )
+                                Doprava <br>
+                                @endif
                                 Medzisúčet <br>
                                 @if (session()->has('coupon'))
                                     Kód ({{ session()->get('coupon')['name'] }})
@@ -120,6 +122,9 @@
                                 <span class="cart-totals-total">Celkom&nbsp; </span>
                             </div>
                             <div class="cart-totals-subtotal">
+                                @if ( session()->has('carrier'))
+                                     {{ presentPrice(session()->get('carrier')['price']) }}<br>
+                                @endif
                                 {{ presentPrice(Cart::subtotal()) }} <br>
                                 @if (session()->has('coupon'))
                                     -{{ presentPrice(session()->get('coupon')['discount']) }} <br>
@@ -137,59 +142,34 @@
                         <a href="{{ route('checkout.index') }}" class="button-primary">Pristúpiť k objednávke</a>
                     </div>
                 </div>
-
                 <div id="delivery-section">
                     <h2>Doprava</h2>
-                <form action="#" method="POST" class="delivery">
-         
+                    <form action="{{ route('carrier.store') }}" method="POST">
+                    @csrf
+                    @foreach ($carriers as $carrier )
+                        
                         <div class="form-block">
                             <div>
-                                <label class="rad" for="personally">
-                                    <input type="radio" id="personally" name="delivery" value="personally"><i></i>
-                                     Na predajni
+                                <label class="rad">
+                                    <input type="radio" 
+                                        id="carrier_slug" 
+                                        name="carrier_slug" 
+                                        value="{{ $carrier->slug }}" {{old('carrier_slug', $carrier->slug) == (session()->get('carrier')['slug']) ? 'checked' : '' }}><i></i>
+                                    {{ $carrier->name }}
                                 </label>
-                                <ul class="custom-radio-container">
-                                    <li>Predajňa je otvorená denne od 8:00 do 17:00.</li>
-                                    <li><a href="#footer-section2" class="un">Adresa predajne</a></li>
-                                    <li>Bežná doba doručenia 1 - 2 dni.</li>
-                                    <li>Tovar je možné si v predajni vyskúšať</li>
-                                </ul>
-                            </div>
-
-                            <div> ZDARMA</div>
+                                    <div class="custom-radio-container">
+                                        <p>{!! $carrier->description !!}</p>
+                                    </div>
+                                </div>
+                                
+                            <div> {{ presentPrice($carrier->price) }}</div>
                         </div>
 
-                        <div class="form-block">
-                            <div>
-                                <label class="rad" for="dhl">
-                                    <input type="radio" id="dhl" name="delivery" value="dhl"><i></i>
-                                    DHL
-                                </label>
-                                <ul class="custom-radio-container">
-                                    <li>Bežná doba doručenia 1 - 2 dni. </li>
-                                    <li>DHL kurier rozváža tovať vo všedné dni od 8:00 do 18:00.</li>
-                                </ul>
-                            </div>
+                        @endforeach
 
-                            <div> €3.50</div>
+                        <div class="mt-1 text-right">
+                            <button class="button" type="submit">Potvrdiť</button>
                         </div>
-
-                        <div class="form-block">
-                            <div>
-                                <label class="rad" for="slovak-post-office">
-                                    <input type="radio" id="slovak-post-office" name="delivery" value="slovak-post-office"><i></i>
-                                    Pošta SR
-                                </label>
-                                    <ul class="custom-radio-container">
-                                        <li>Bežná doba doručenia 3 - 4 pracovné dni.</li>
-                                        <li>U vodiča Pošty SR môžete platiť len v hotovosti</li>
-                                        <li>Pošta rozváža tovar vo všedné dni od 8:00 do 17:00.</li>
-                                    </ul>
-                            </div>
-
-                            <div> €2.50</div>
-                        </div>
-
                     </form>
                 </div> {{-- End Delivery section--}}
 
@@ -253,7 +233,6 @@
                         </div> <!-- end saved-for-later -->
                         </div>
                     @endif
-                     
     </div> <!-- end cart-section -->
 
     @include('partials.might-like')
@@ -265,9 +244,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         (function(){
-
             const classname = document.querySelectorAll('.quantity')
-
             Array.from(classname).forEach(function(element) {
                 element.addEventListener('change', function() {
                     const id = element.getAttribute('data-id')      // Getting id from <select> quantity.
@@ -293,15 +270,12 @@
     <script>
         (function(){
             const classname = document.querySelectorAll('.delivery')
-
             Array.from(classname).forEach(function(element) {   // Making from classname an Array
                 element.addEventListener('change', function() {
-                    axios.patch('/cart/DHL', {
-                        delivery: 'dhl'    
-                    })
+                    
                     .then(function(response) {      // REsponse from cart.blade/CartController@update.
-                       console.log(response);      
-                        // window.location.href = '{{ route('cart.index') }}'  // Refresh the page.
+                    //    console.log(response);      
+                        window.location.href = '{{ route('cart.index') }}'  // Refresh the page.
                     })
                     .catch(function(error){
                         console.log(error);

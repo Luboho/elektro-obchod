@@ -17,6 +17,9 @@ Route::post('/saveForLater/switchToCart/{product}', 'SaveForLaterController@swit
 Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
 Route::delete('/coupon', 'CouponsController@destroy')->name('coupon.destroy');
 
+Route::post('/carrier', 'CarriersController@store')->name('carrier.store');
+Route::delete('/carrier', 'CarriersController@destroy')->name('carrier.destroy');
+
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 

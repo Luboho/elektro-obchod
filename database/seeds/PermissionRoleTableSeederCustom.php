@@ -27,7 +27,9 @@ class PermissionRoleTableSeederCustom extends Seeder
                 'browse_roles',
                 'read_roles',
                 'edit_roles',
+                'edit_carriers',
                 'add_roles',
+                'add_carriers',
                 'delete_roles',
                 'browse_users',
                 'edit_users',
@@ -39,6 +41,7 @@ class PermissionRoleTableSeederCustom extends Seeder
                 'delete_products',
                 'delete_companies',
                 'delete_coupons',
+                'delete_carriers',
                 'delete_categories',
                 'delete_category-product',
             ]);

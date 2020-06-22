@@ -56,6 +56,20 @@ class DataTypesTableSeederCustom extends Seeder
             ])->save();
         }
 
+        $dataType = $this->dataType('slug', 'carriers');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'carriers',
+                'display_name_singular' => 'Dopravca',
+                'display_name_plural'   => 'Dopravcovia',
+                'icon'                  => 'voyager-truck',
+                'model_name'            => 'App\Carrier',
+                'controller'            => '\App\Http\Controllers\Voyager\CarriersController',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
         $dataType = $this->dataType('slug', 'category');
         if (!$dataType->exists) {
             $dataType->fill([

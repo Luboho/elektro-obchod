@@ -102,6 +102,11 @@
     grid-template-areas: "shopping-cart-summary" "delivery-section";
   }
 
+  .cart-section #delivery-section {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+
   .cart-section .cart-buttons {
     flex-direction: column;
     text-align: center;

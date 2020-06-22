@@ -125,6 +125,9 @@
 
                 <div class="checkout-totals">
                     <div class="checkout-totals-left">
+                        @if( session()->has('carrier') )
+                            Doprava <br>
+                        @endif
                             Medzisúčet <br>
 
                         @if (session()->has('coupon'))
@@ -140,6 +143,9 @@
                     </div>
 
                     <div class="checkout-totals-right">
+                        @if ( session()->has('carrier'))
+                            {{ presentPrice(session()->get('carrier')['price']) }}<br>
+                        @endif
                         {{ presentPrice(Cart::subtotal()) }} <br>
                         @if (session()->has('coupon'))
                             -{{ presentPrice(session()->get('coupon')['discount']) }} <br>

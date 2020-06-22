@@ -104,6 +104,10 @@
         "shopping-cart-summary"
          "delivery-section";
 
+        #delivery-section {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
         .cart-buttons {
             flex-direction: column;
             text-align: center;

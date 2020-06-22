@@ -46,7 +46,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"validation":{"rule":"max:100"}}',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 2,
             ])->save();
         }
@@ -94,7 +94,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"validation":{"rule":"required|regex:/^\\d*(\\.\\d{1,2})?$/"}}',
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
                 'order'        => 5,
             ])->save();
         }
@@ -126,7 +126,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"on":"Yes","off":"No"}',
+                'details'      => ['on' => 'Áno','off' => 'Nie', 'checked' => false],
                 'order'        => 7,
             ])->save();
         }
@@ -142,7 +142,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"quality":"70%","thumbnails":[{"name":"medium","scale":"50%"},{"name":"small","scale":"25%"},{"name":"cropped","crop":{"width":"300","height":"250"}}]}',
+                'details'      => ['quality' => '70%','thumbnails' => [['name' =>'medium','scale' => '50%'],['name' => 'small','scale' => '25%'],['name' => 'cropped','crop' => ['width' => '300','height' => '250']]]],
                 'order'        => 8,
             ])->save();
         }
@@ -158,7 +158,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['quality' => '70%','thumbnails' => [['name' =>'medium','scale' => '50%'],['name' => 'small','scale' => '25%'],['name' => 'cropped','crop' => ['width' => '300','height' => '250']]]],
                 'order'        => 9,
             ])->save();
         }
@@ -363,7 +363,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
                 'order'        => 11,
             ])->save();
         }
@@ -378,7 +378,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
                 'order'        => 12,
             ])->save();
         }
@@ -393,7 +393,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
                 'order'        => 13,
             ])->save();
         }
@@ -408,7 +408,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
                 'order'        => 14,
             ])->save();
         }
@@ -423,7 +423,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
                 'order'        => 15,
             ])->save();
         }
@@ -453,7 +453,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => ['on' => 'Vybavené', 'off' => 'Nevybavené', 'checked' => true],
+                'details'      => ['on' => 'Vybavené', 'off' => 'Nevybavené', 'checked' => false],
                 'order'        => 17,
             ])->save();
         }
@@ -557,7 +557,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"default":"fixed","options":{"fixed":"Fixed Value","percent":"Percent Off"}}',
+                'details'      => ['default' => 'fixed','options' => ['fixed' => 'Hodnota','percent' => 'Percentuálna zľava']],
                 'order'        => 3,
             ])->save();
         }
@@ -573,7 +573,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"null":""}',
+                'details'      => ['null' => ''],
                 'order'        => 4,
             ])->save();
         }
@@ -589,7 +589,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"null":""}',
+                'details'      => ['null' => ''],
                 'order'        => 5,
             ])->save();
         }
@@ -749,7 +749,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '{"validation":{"rule":"15"}}',
+                'details'      => ['validation' => ['rule' => 'max:15']],
                 'order'        => 2,
             ])->save();
         }
@@ -895,6 +895,126 @@ class DataRowsTableSeederCustom extends Seeder
                 'delete'       => '',
                 'details'      => '',
                 'order'        => 11,
+            ])->save();
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Carrier
+        |--------------------------------------------------------------------------
+        */
+
+        $carrierDataType = DataType::where('slug', 'carriers')->firstOrFail();
+
+        $dataRow = $this->dataRow($carrierDataType, 'id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'hidden',
+                'display_name' => 'Id',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 1,
+            ])->save();
+        }
+
+       $dataRow = $this->dataRow($carrierDataType, 'name');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Názov',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 2,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($carrierDataType, 'slug');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'slug',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($carrierDataType, 'description');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'rich_text_box',
+                'display_name' => 'Popis',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => ['null' => ''],
+                'order'        => 4,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($carrierDataType, 'price');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => 'Cena',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($carrierDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Vytvorené',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($carrierDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Aktualizované',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 7,
             ])->save();
         }
 

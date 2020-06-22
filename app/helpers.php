@@ -51,7 +51,11 @@ class Helper {
 
 function presentPrice($price)   // Using this method for non Product model purposes. 
 {
-    return sprintf('€%01.2f', $price / 100);
+    if ($price > 0){
+        return sprintf('€%01.2f', $price / 100);
+    } elseif ( $price === 0) {
+        return 'Zadarmo';   // Related on Delivery.
+    }
 }
 
 function presentDate($date) 
@@ -71,10 +75,12 @@ function productImage($path)
 
 function getNumbers()
     {
+
+        $delivery = session()->get('carrier')['price'];
         $tax = config('cart.tax') / 100;
         $couponCode = session()->get('coupon')['name'] ?? null;
         $discount = session()->get('coupon')['discount'] ?? 0;  // 0 to be sure if session hasn't coupon.
-        $newSubtotal = (Cart::subtotal() - $discount);
+        $newSubtotal = ((Cart::subtotal() + $delivery) - $discount);
         if ($newSubtotal < 0) {     // Do not allow negative total in checkout.
             $newSubtotal = 0;
         }

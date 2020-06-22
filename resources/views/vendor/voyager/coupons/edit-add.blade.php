@@ -220,5 +220,10 @@
             });
             $('[data-toggle="tooltip"]').tooltip();
         });
+
+        // Making Coupons Float.
+        var value = $('input[name="value"').val();
+            $('input[name="value"').val(value / 100);
+       
     </script>
 @stop

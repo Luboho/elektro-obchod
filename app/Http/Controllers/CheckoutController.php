@@ -26,6 +26,11 @@ class CheckoutController extends Controller
             return redirect('shop.index');
         }
 
+        if(!session()->has('carrier')) {
+            session()->flash('denied', 'Vyberte prosím spôsob dopravy.');
+            return redirect()->route('cart.index');            
+        }
+
         if (auth()->user() && request()->is('guestCheckout')) {
             return redirect()->route('checkout.index');
         }
@@ -77,6 +82,7 @@ class CheckoutController extends Controller
                     //change to Order ID after we start using DB
                     'contents' => $contents,
                     'quantity' => Cart::instance('default')->count(),
+                    'delivery' => collect(session()->get('carrier'))->toJson(),
                     'discount' => collect(session()->get('coupon'))->toJson(),
                 ],
             ]);
@@ -91,6 +97,7 @@ class CheckoutController extends Controller
             // SUCCESSFUL
             Cart::instance('default')->destroy();
             session()->forget('coupon');
+            session()->forget('carrier');
 
             session()->flash('success_message', 'Ďakujeme! Vaša platba bola prijatá!');
             return redirect()->action('ConfirmationController@index');
