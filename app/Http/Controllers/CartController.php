@@ -48,6 +48,8 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        session()->forget('carrier');
+
         // // Avoid items duplication in cart. 
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id === $request->id;          // Cmp. items between cart and request. 
@@ -96,6 +98,7 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {   
+        session()->forget('carrier');
 
         $validator = Validator::make($request->all(), [
             'quantity' => 'required|numeric|between:1,5'
@@ -124,6 +127,8 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
+        session()->forget('carrier');
+
         Cart::remove($id);
 
         session()->flash('success', 'Položka bola odstránená!');
@@ -138,6 +143,8 @@ class CartController extends Controller
      */
     public function switchToSaveForLater($id)
     {
+    session()->forget('carrier');
+
     $item = Cart::get($id);
 
     Cart::remove($id);

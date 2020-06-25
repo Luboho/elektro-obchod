@@ -54,7 +54,16 @@ function presentPrice($price)   // Using this method for non Product model purpo
     if ($price > 0){
         return sprintf('€%01.2f', $price / 100);
     } elseif ( $price === 0) {
-        return 'Zadarmo';   // Related on Delivery.
+        return 'Zdarma';   
+    }
+}
+
+function carrierPrice($price)               // Related on Delivery and getNumbers() see below.
+{
+    if (Cart::total() > 8500 || $price === 0) { // Cart::total() is in sence.
+        return 'Zdarma';
+    } else {
+        return sprintf('€%01.2f', $price / 100);
     }
 }
 

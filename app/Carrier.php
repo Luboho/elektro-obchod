@@ -11,12 +11,12 @@ class Carrier extends Model
         return self::where('slug', $slug)->first() ;
     }
 
-    public function delivery($total)
-    {
-        if ($this->price > 0) {
-            return $this->price;
-        } else {
-            return 0;
-        }
-    }
+    // public function delivery($total,$price)    // used in CarrierController
+    // {
+    //     if ($this->total > 85 || $this->price == 0) {
+    //         return 0;
+    //     } else {
+    //         return $this->price;
+    //     }
+    // }
 }

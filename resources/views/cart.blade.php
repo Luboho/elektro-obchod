@@ -99,7 +99,7 @@
 
                     <div class="cart-totals">
                         <div class="cart-totals-left">
-                          Doprava ZDARMA pri nákupe nad 45€.
+                          Doprava ZDARMA pri nákupe nad 85€.
                         </div>
                         <div class="cart-totals-right">
                             <div>
@@ -162,7 +162,7 @@
                                     </div>
                                 </div>
                                 
-                            <div> {{ presentPrice($carrier->price) }}</div>
+                            <div> {{ carrierPrice($carrier->price) }}</div>
                         </div>
 
                         @endforeach

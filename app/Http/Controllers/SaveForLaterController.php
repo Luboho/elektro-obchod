@@ -28,6 +28,8 @@ class SaveForLaterController extends Controller
      */
     public function switchToCart($id)
     {
+        session()->forget('carrier');
+
         $item = Cart::instance('saveForLater')->get($id);
 
         Cart::instance('saveForLater')->remove($id);

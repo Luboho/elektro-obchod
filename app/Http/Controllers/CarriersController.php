@@ -16,16 +16,27 @@ class CarriersController extends Controller
      */
     public function store(Request $request)
     {
-       $carrier = Carrier::where('slug', $request->carrier_slug)->first();
+        
+        $carrier = Carrier::where('slug', $request->carrier_slug)->first();
+        
+        if (!$carrier) {
+            return redirect()->route('cart.index')->withErrors('Neoznačili ste spôsob dopravy. Prosím, vyberte jednu z možností.');
+        }
+        
+       $total = Cart::total();
+       $price = $carrier->price;
 
-       if (!$carrier) {
-           return redirect()->route('cart.index')->withErrors('Neoznačili ste spôsob dopravy. Prosím, vyberte jednu z možností.');
+       if ($total > 8500 || $price == 0) {      // $total > in sense.
+           $price = 0;
+       } else {
+           $price = $price;
        }
+
 
        session()->put('carrier', [
             'name' => $carrier->name,
             'slug' => $carrier->slug,
-            'price' => $carrier->delivery(Cart::subtotal()),
+            'price' => $price,
        ]);
 
        return redirect()->route('cart.index')->with('success_message', 'Bol vybraný spôsob dopravy.');
@@ -41,4 +52,6 @@ class CarriersController extends Controller
     {
         //
     }
+
+    
 }

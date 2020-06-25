@@ -62,7 +62,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 3,
             ])->save();
         }
@@ -541,7 +541,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 2,
             ])->save();
         }
@@ -661,7 +661,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 2,
             ])->save();
         }
@@ -677,7 +677,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 3,
             ])->save();
         }
@@ -765,7 +765,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 3,
             ])->save();
         }
@@ -781,7 +781,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 4,
             ])->save();
         }
@@ -813,7 +813,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 6,
             ])->save();
         }
@@ -829,7 +829,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 7,
             ])->save();
         }
@@ -845,7 +845,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 8,
             ])->save();
         }
@@ -933,7 +933,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 2,
             ])->save();
         }
@@ -949,7 +949,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'details'      => '',
+                'details'      => ['validation' => ['rule' => ['max:100']]],
                 'order'        => 3,
             ])->save();
         }
