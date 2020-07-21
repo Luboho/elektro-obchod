@@ -148,7 +148,7 @@
                                 @endif
                             @else
                                 @include('voyager::multilingual.input-hidden-bread-read')
-                                @if ($row->display_name == 'Faktúra celkom' || $row->display_name == 'Medzisúčet' || $row->display_name == 'DPH' || $row->display_name == 'Zľava na obj.')
+                                @if ($row->display_name == 'Cena doručenia' || $row->display_name == 'Faktúra celkom' || $row->display_name == 'Medzisúčet' || $row->display_name == 'DPH' || $row->display_name == 'Zľava na obj.')
                                     <p>€{{ $dataTypeContent->{$row->field} / 100 }}</p>
                                 @else
                                     <p>{{ $dataTypeContent->{$row->field} }}</p>

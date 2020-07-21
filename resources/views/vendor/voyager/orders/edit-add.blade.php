@@ -202,6 +202,8 @@
         // Making Order Billing values Float.
         var billing_discount = $('input[name="billing_discount"').val();
             $('input[name="billing_discount"').val(billing_discount / 100);
+        var delivery_price = $('input[name="delivery_price"').val();
+            $('input[name="delivery_price"').val(delivery_price / 100);
         var billing_subtotal = $('input[name="billing_subtotal"').val();
             $('input[name="billing_subtotal"').val(billing_subtotal / 100);
         var billing_tax = $('input[name="billing_tax"').val();

@@ -382,6 +382,36 @@ class DataRowsTableSeederCustom extends Seeder
                 'order'        => 12,
             ])->save();
         }
+        $dataRow = $this->dataRow($orderDataType, 'carrier');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Doručenie',
+                'required'     => '',
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 13,
+            ])->save();
+        }
+        $dataRow = $this->dataRow($orderDataType, 'delivery_price');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'number',
+                'display_name' => 'Cena doručenia',
+                'required'     => '',
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
+                'order'        => 14,
+            ])->save();
+        }
         $dataRow = $this->dataRow($orderDataType, 'billing_subtotal');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -394,7 +424,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
-                'order'        => 13,
+                'order'        => 15,
             ])->save();
         }
         $dataRow = $this->dataRow($orderDataType, 'billing_tax');
@@ -409,7 +439,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
-                'order'        => 14,
+                'order'        => 16,
             ])->save();
         }
         $dataRow = $this->dataRow($orderDataType, 'billing_total');
@@ -424,7 +454,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => ['validation' => ['rule' => ['required','between:0,9999999.99','numeric']]],
-                'order'        => 15,
+                'order'        => 17,
             ])->save();
         }
         $dataRow = $this->dataRow($orderDataType, 'payment_gateway');
@@ -439,7 +469,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '',
-                'order'        => 16,
+                'order'        => 18,
             ])->save();
         }
         $dataRow = $this->dataRow($orderDataType, 'shipped');
@@ -454,7 +484,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => ['on' => 'Vybavené', 'off' => 'Nevybavené', 'checked' => false],
-                'order'        => 17,
+                'order'        => 19,
             ])->save();
         }
         $dataRow = $this->dataRow($orderDataType, 'error');
@@ -469,7 +499,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => '',
-                'order'        => 18,
+                'order'        => 20,
             ])->save();
         }
         $dataRow = $this->dataRow($orderDataType, 'created_at');
@@ -484,7 +514,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 19,
+                'order'        => 21,
             ])->save();
         }
 
@@ -500,7 +530,7 @@ class DataRowsTableSeederCustom extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 20,
+                'order'        => 22,
             ])->save();
         }
         

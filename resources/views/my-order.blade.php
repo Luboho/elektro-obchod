@@ -83,6 +83,10 @@
                                     <td>{{ $order->billing_city }}</td>
                                 </tr>
                                 <tr>
+                                    <td>Doručenie</td>
+                                    <td>{{ $order->carrier }}</td>
+                                </tr>
+                                <tr>
                                     <td>Medzisúčet</td>
                                     <td>{{ presentPrice($order->billing_subtotal) }}</td>
                                 </tr>
@@ -90,7 +94,7 @@
                                     <td>DPH</td>
                                     <td>{{ presentPrice($order->billing_tax) }}</td>
                                 </tr>
-                                <tr>
+                                <tr class="font-bold">
                                     <td>Celkom</td>
                                     <td>{{ presentPrice($order->billing_total) }}</td>
                                 </tr>

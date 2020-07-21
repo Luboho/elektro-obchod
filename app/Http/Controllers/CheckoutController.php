@@ -27,7 +27,7 @@ class CheckoutController extends Controller
         }
 
         if(!session()->has('carrier')) {
-            session()->flash('denied', 'Vyberte prosím spôsob dopravy.');
+            session()->flash('denied', 'Potvrďte prosím spôsob dopravy.');
             return redirect()->route('cart.index');            
         }
 
@@ -123,6 +123,8 @@ class CheckoutController extends Controller
             'billing_name_on_card' => $request->name_on_card,
             'billing_discount' => getNumbers()->get('discount'),
             'billing_discount_code' => getNumbers()->get('couponCode'),
+            'carrier' => session()->get('carrier')['name'],
+            'delivery_price' => session()->get('carrier')['price'],
             'billing_subtotal' => getNumbers()->get('newSubtotal'),
             'billing_tax' => getNumbers()->get('newTax'),
             'billing_total' => getNumbers()->get('newTotal'),
